@@ -3,9 +3,9 @@ from typing import Any
 from urllib import request
 from processing import Process
 def main():
-    token = '8f3421323bf7069557990a3884edc7d7693d035888376bdc68c9044937282299811c46840d482b90dcbfa'
+    token = 'YOUR TOKEN'
     server_join = requests.get('https://api.vk.com/method/groups.getLongPollServer',
-                               params={'access_token': token, 'v': '5.101', 'group_id': '182175137'}).json()['response']
+                               params={'access_token': token, 'v': '5.101', 'group_id': 'ID GROUP'}).json()['response']
 
     while True:
         server = requests.get('{server}?act=a_check&key={key}&ts={ts}&wait=25 '.format(server=server_join['server'],
